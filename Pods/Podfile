@@ -10,19 +10,16 @@ target 'Example' do
 
   pod 'XZURLQuery', :path => '../'
 
-  pod 'SDWebImage'
-  pod 'YYModel'
-  pod 'AFNetworking'
+  # pod 'SDWebImage'
+  # pod 'YYModel'
+  # pod 'AFNetworking'
   
   target 'ExampleTests' do
     inherit! :search_paths
-
-    
   end
 
   target 'ExampleUITests' do
     inherit! :search_paths
-
-    
   end
+  
 end

@@ -17,13 +17,29 @@
     [super viewDidLoad];
     
     XZURLQuery *query = [XZURLQuery queryForURLString:@"https://xezun.com/?key1=x&key2=&key3=x&key3=&key3&key4"];
+    NSLog(@"key1: %@", query[@"key1"]);
+    NSLog(@"key2: %@", query[@"key2"]);
+    NSLog(@"key3: %@", query[@"key3"]);
+    NSLog(@"key4: %@", query[@"key4"]);
+    NSLog(@"url: %p, %@", query.url, query.url);
+    NSLog(@"dict: %@", query.dictionaryRepresentation);
+    
+    NSLog(@"=== 修改 ===");
     query[@"name"] = @"John";
     query[@"key1"] = nil;
-    query[@"key2"] = nil;
-    query[@"key3"] = nil;
+    query[@"key2"] = self;
+    query[@"key3"] = NSNull.null;
     query[@"ages"] = @[@"12", @"14"];
     [query addValue:@"Lily" forName:@"name"];
-    NSLog(@"%@", query.url);
+    
+    NSLog(@"key1: %@", query[@"key1"]);
+    NSLog(@"key2: %@", query[@"key2"]);
+    NSLog(@"key3: %@", query[@"key3"]);
+    NSLog(@"key4: %@", query[@"key4"]);
+    NSLog(@"name: %@", query[@"name"]);
+    NSLog(@"ages: %@", query[@"ages"]);
+    NSLog(@"url: %p, %@", query.url, query.url);
+    NSLog(@"dict: %@", query.dictionaryRepresentation);
 }
 
 
